@@ -92,25 +92,26 @@ O problema consiste em sem saber se as condições climáticas estão propícias
 
 **1° passo: Buscar qual é o atributo com maior ganho para ser a "Raiz" da árvore**
 
-Inicialmente verificar qual o entropia da classe/target *PLAY TENNIS*:
+Inicialmente verificar qual o entropia da classe/target **PLAY TENNIS**:
 
 S = [9+, 5-]
-E = 0,940 = -(9/14)log2(9/14) -(5/14)log2(5/14)
+E = 0,940 = -9/14 log₂ 9/14  -5/14 log₂ 5/14 
 
 Após, serão analisados todos os atributos para ver qual tem a melhor entropia.
 
-Atenção: A coluna *DAY* não será usada por não tem influência sob a classificação.
+Atenção: A coluna **DAY** não será usada por não tem influência sob a classificação.
 
 
-PARA *HUMIDITY*:
+**PARA HUMIDITY:**
 
- - Decisão *High*:
- - **[3+, 4-]**= -(3/7)log2(3/7) -(4/7)log2(4/7) = **0,985**
+ - Decisão **High**:
+   **[3+, 4-]** = -3/7 log₂ 3/7  -4/7 log₂ 4/7  => **0,985**
 
- - Decisão *Normal*:
- - **[6+, 1-]**= -(6/7)log2(6/7) -(1/7)log2(1/7) = **0,592**
+ - Decisão **Normal**:
+ - **[6+, 1-]** = -6/7 log₂ 6/7  -1/7 log₂ 1/7  => **0,592**
 
 
+**Gain(S, HUMIDITY) = 0,940-**
 
 PARA *OUTLOOK*:
 **Gain(S, OUTLOOK)**
@@ -119,7 +120,7 @@ PARA *OUTLOOK*:
 
 
 
-**Gain(S, HUMIDITY) = 0,940-**
+
 
 Para *TEMPERATURE*:
 
