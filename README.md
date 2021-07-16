@@ -99,6 +99,7 @@ S = [9+, 5-]
 E = -(9/14 log₂ 9/14)  -(5/14 log₂ 5/14) = **0,940**
 
 <br>
+
 Após, serão analisados todos os atributos para ver qual tem a melhor entropia.
 > Atenção: A coluna **DAY** não será usada por não tem influência sob a classificação.
 
@@ -106,7 +107,7 @@ Após, serão analisados todos os atributos para ver qual tem a melhor entropia.
 **PARA HUMIDITY:**
 
 Decisão **High**:
-> [3+, 4-]
+> [3+, 4-] <br>
 -(3/7 log₂ 3/7) -(4/7 log₂ 4/7) = **0,985**
 
 Decisão **Normal**:
@@ -117,6 +118,7 @@ Decisão **Normal**:
 **Gain(S, HUMIDITY) = 0,940 -(7/14)* 0,985 -(7/14)* 0,592 = 0,151**
 
 <br>
+
 PARA *OUTLOOK*:
 **Gain(S, OUTLOOK)**
 
