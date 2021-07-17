@@ -94,10 +94,14 @@ O problema consiste em sem saber se as condições climáticas estão propícias
 
 Inicialmente verificar qual o entropia da classe/target **PLAY TENNIS**:
 
-S = [9+, 5-]
-
-E = -(9/14 log₂ 9/14)  -(5/14 log₂ 5/14) = **0,940**
-
+<table>
+  <tr>
+    <td>S = [9+, 5-]</td>
+  </tr>
+  <tr>
+    <td>E = -(9/14 log₂ 9/14)  -(5/14 log₂ 5/14) = <b>0,940</b> </td>
+  </tr>
+</table>
 <br>
 
 Após, serão analisados todos os atributos para ver qual tem a melhor entropia.
@@ -107,15 +111,29 @@ Após, serão analisados todos os atributos para ver qual tem a melhor entropia.
 **PARA HUMIDITY:**
 
 Decisão **High**:
-> [3+, 4-] <br>
--(3/7 log₂ 3/7) -(4/7 log₂ 4/7) = **0,985**
+<table>
+  <tr>
+    <td>[3+, 4-]</td>
+    <td>-(3/7 log₂ 3/7) -(4/7 log₂ 4/7) = <b>0,985</b> </td>
+  </tr>
+</table>
 
 Decisão **Normal**:
-> [6+, 1-]
--(6/7 log₂ 6/7)  -(1/7 log₂ 1/7) = **0,592**
+<table>
+  <tr>
+    <td>[6+, 1-]</td>
+    <td>-(6/7 log₂ 6/7)  -(1/7 log₂ 1/7) = <b>0,592</b></td>
+  </tr>
+</table>
 
+<table>
+  <tr>
+    <td>Gain(S, HUMIDITY)</td>
+    <td>0,940 -(7/14)* 0,985 -(7/14)* 0,592<b>0,592</b></td>
+    <td><b>0,151</b></td>
+  </tr>
+</table>
 
-**Gain(S, HUMIDITY) = 0,940 -(7/14)* 0,985 -(7/14)* 0,592 = 0,151**
 
 <br>
 
