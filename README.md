@@ -72,10 +72,17 @@ Dado um conjunto S, com instâncias pertencentes à classe i, com probabilidade 
   <img align="center" src="./image/entropyShannon.png" alt="Entropy Shannon">
 </div>
 
+
+
+<!-- colocar grafico dos valores que a entropia pode atingir -->
+
+
+
 <h3> GANHO DE INFORMAÇÃO </h3>
 
 O ganho (gain) é define a redução na entropia. Ganho(S,A) significa a redução esperada na entropia de S, ordenando pelo atributo A. O ganho é dado pela seguinte equação:
 
+<!-- EXPLICAR MAIS DEPOIS -->
 
 <img src="./image/line.png" alt="line" width="100%">
 <br>
@@ -94,7 +101,10 @@ O problema consiste em sem saber se as condições climáticas estão propícias
 
 Inicialmente verificar qual o entropia da classe/target **PLAY TENNIS**:
 
-<table>
+<table>  
+  <tr>
+    <th>Entropia geral</th>
+  </tr>
   <tr>
     <td>S = [9+, 5-]</td>
   </tr>
@@ -118,6 +128,10 @@ Decisão **High**:
   </tr>
 </table>
 
+> O valor 3+ representa a quantidade de instancias com **High** e classificação positiva.
+> O valor 4- representa a quantidade de instancias com **High** e classificação negativa.
+
+
 Decisão **Normal**:
 <table>
   <tr>
@@ -126,26 +140,457 @@ Decisão **Normal**:
   </tr>
 </table>
 
+Ganho de informação para o atributo **HUMIDITY** nesse conjunto de dados: 
 <table>
   <tr>
-    <td>Gain(S, HUMIDITY)</td>
-    <td>0,940 -(7/14)* 0,985 -(7/14)* 0,592<b>0,592</b></td>
-    <td><b>0,151</b></td>
+    <td><b>Gain(S, HUMIDITY)</b></td>
+    <td>0,940 -(7/14)* 0,985 -(7/14)* 0,592 = <b>0,151</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA OUTLOOK:**
+
+Decisão **Sunny**:
+<table>
+  <tr>
+    <td>[2+, 3-]</td>
+    <td>-(2/5 log₂ 2/5) -(3/5 log₂ 3/5) = <b>0,971</b> </td>
+  </tr>
+</table>
+
+Decisão **Overcast**:
+<table>
+  <tr>
+    <td>[4+, 0-]</td>
+    <td>-(4/4 log₂ 4/4)  -(0/4 log₂ 0/4) = <b>0</b></td>
+  </tr>
+</table>
+
+Decisão **Rain**:
+<table>
+  <tr>
+    <td>[3+, 2-]</td>
+    <td>-(3/5 log₂ 3/5)  -(2/5 log₂ 2/5) = <b>0,971</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **OUTLOOK** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(S, OUTLOOK)</b></td>
+    <td>0,940 -(5/14)* 0,971 -(4/14)* 0 -(5/14)* 0,971 = <b>0,246</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA TEMPERATURE:**
+
+Decisão **Hot**:
+<table>
+  <tr>
+    <td>[2+, 2-]</td>
+    <td>-(2/4 log₂ 2/4) -(2/4 log₂ 2/4) = <b>1</b> </td>
+  </tr>
+</table>
+
+Decisão **Mild**:
+<table>
+  <tr>
+    <td>[4+, 2-]</td>
+    <td>-(4/6 log₂ 4/6)  -(2/6 log₂ 2/6) = <b>0,918</b></td>
+  </tr>
+</table>
+
+Decisão **Cool**:
+<table>
+  <tr>
+    <td>[3+, 1-]</td>
+    <td>-(3/4 log₂ 3/4)  -(1/4 log₂ 1/4) = <b>0,811</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **TEMPERATURE** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(S, TEMPERATURE)</b></td>
+    <td>0,940 -(4/14)* 1 -(6/14)* 0,918 -(4/14)* 0,811 = <b>0,029</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA WINDY:**
+
+Decisão **Weak**:
+<table>
+  <tr>
+    <td>[6+, 2-]</td>
+    <td>-(6/8 log₂ 6/8) -(2/8 log₂ 2/8) = <b>0,811</b> </td>
+  </tr>
+</table>
+
+Decisão **Strong**:
+<table>
+  <tr>
+    <td>[3+, 3-]</td>
+    <td>-(3/6 log₂ 3/6)  -(3/6 log₂ 3/6) = <b>1</b></td>
   </tr>
 </table>
 
 
+Ganho de informação para o atributo **WINDY** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(S, WINDY)</b></td>
+    <td>0,940 -(8/14)* 0,811 -(6/14)* 1 = <b>0.048</b></td>
+  </tr>
+</table>
 <br>
 
-PARA *OUTLOOK*:
-**Gain(S, OUTLOOK)**
+Dentre todos os atributos, o de maior ganho é o **OUTLOOK**
+
+<table>
+  <tr>
+    <td><b>Gain(S, HUMIDITY)</b></td>
+    <td>0,940 -(7/14)* 0,985 -(7/14)* 0,592 = <b>0,151</b></td>
+  </tr>
+  <tr>
+    <td><b>Gain(S, OUTLOOK)</b></td>
+    <td>0,940 -(5/14)* 0,971 -(4/14)* 0 -(5/14)* 0,971 = <b>0,246</b></td>
+  </tr>
+  <tr>
+    <td><b>Gain(S, TEMPERATURE)</b></td>
+    <td>0,940 -(4/14)* 1 -(6/14)* 0,918 -(4/14)* 0,811 = <b>0,029</b></td>
+  </tr>
+  <tr>
+    <td><b>Gain(S, WINDY)</b></td>
+    <td>0,940 -(8/14)* 0,811 -(6/14)* 1 = <b>0.048</b></td>
+  </tr>
+</table>
 
 
+O atributo **OUTLOOK** é a **RAIZ** da árvore, e seus ramos serão os possíveis valores para esse atributo **Sunny**, **Overcast** e **Rain**.
+> No próximos passos o atributo já não é tido em conta.
+
+<!-- COLOCAR UMA IMAGEM DA ÁRVORE -->
+
+<br>
+
+**2° passo: Buscar qual é o atributo com maior ganho para o ramo Sunny.**
+
+Recalcular entropia com base no **Sunny**:
+
+<table>  
+  <tr>
+    <th>Entropia</th>
+  </tr>
+  <tr>
+    <td>S = [2+, 3-]</td>
+  </tr>
+  <tr>
+    <td>E = -(2/5 log₂ 2/5)  -(3/5 log₂ 3/5) = <b>0,971</b> </td>
+  </tr>
+</table>
+<br>
+
+**PARA TEMPERATURE:**
+
+Decisão **Hot**:
+<table>
+  <tr>
+    <td>[0+, 2-]</td>
+    <td>-(0/2 log₂ 0/2) -(2/2 log₂ 2/2) = <b>0</b> </td>
+  </tr>
+</table>
+
+Decisão **Mild**:
+<table>
+  <tr>
+    <td>[1+, 1-]</td>
+    <td>-(1/2 log₂ 1/2)  -(1/2 log₂ 1/2) = <b>1</b></td>
+  </tr>
+</table>
+
+Decisão **Cool**:
+<table>
+  <tr>
+    <td>[1+, 0-]</td>
+    <td>-(1/1 log₂ 1/1)  -(0/1 log₂ 0/1) = <b>0</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **TEMPERATURE** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(Ssunny, TEMPERATURE)</b></td>
+    <td>0,971 -(2/5)* 0 -(2/5)* 1 -(1/5)* 0 = <b>0,571</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA HUMIDITY:**
+
+Decisão **High**:
+<table>
+  <tr>
+    <td>[0+, 3-]</td>
+    <td>-(0/3 log₂ 0/3) -(3/3 log₂ 3/3) = <b>0</b> </td>
+  </tr>
+</table>
+
+Decisão **Normal**:
+<table>
+  <tr>
+    <td>[2+, 0-]</td>
+    <td>-(2/2 log₂ 2/2)  -(0/2 log₂ 0/2) = <b>0</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **HUMIDITY** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(Ssunny, HUMIDITY)</b></td>
+    <td>0,971 -(3/5)* 0 -(2/5)* 0 = <b>0,971</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA WINDY:**
+
+Decisão **Weak**:
+<table>
+  <tr>
+    <td>[1+, 2-]</td>
+    <td>-(1/3 log₂ 1/3) -(2/3 log₂ 2/3) = <b>0,918</b> </td>
+  </tr>
+</table>
+
+Decisão **Strong**:
+<table>
+  <tr>
+    <td>[1+, 1-]</td>
+    <td>-(1/2 log₂ 1/2)  -(1/2 log₂ 1/2) = <b>1</b></td>
+  </tr>
+</table>
 
 
+Ganho de informação para o atributo **WINDY** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(S, WINDY)</b></td>
+    <td>0,971 -(3/5)* 0,918 -(2/5)* 1 = <b>0.020</b></td>
+  </tr>
+</table>
+<br>
 
 
+<table>
+  <tr>
+    <td><b>Gain(Ssunny, TEMPERATURE)</b></td>
+    <td>0,971 -(2/5)* 0 -(2/5)* 1 -(1/5)* 0 = <b>0,571</b></td>
+  </tr>
+    <tr>
+    <td><b>Gain(Ssunny, HUMIDITY)</b></td>
+    <td>0,971 -(3/5)* 0 -(2/5)* 0 = <b>0,971</b></td>
+  </tr>
+  <tr>
+    <td><b>Gain(Ssunny, WINDY)</b></td>
+    <td>0,971 -(3/5)* 0,918 -(2/5)* 1 = <b>0.020</b></td>
+  </tr>
+</table>
 
-Para *TEMPERATURE*:
+Dentre todos os atributos, o de maior ganho é o **HUMIDITY**, logo tomará seguimento a partir do ramo **Sunny**.
 
-Para *WINDY*:
+Em **Sunny** agora terá o atributo **HUMIDITY** com as seguintes possibilidades:
+
+Para **High**:
+<table>
+  <tr>
+    <td>[0+, 3-]</td>
+    <td>-(0/3 log₂ 0/3) -(3/3 log₂ 3/3) = <b>0</b> </td>
+  </tr>
+</table>
+
+Automaticamente o ramo **High** terá uma "Folha" classificando para **No**, pois todas as instancias (L9, L11) levam a isso.
+
+Para **Normal**:
+<table>
+  <tr>
+    <td>[2+, 0-]</td>
+    <td>-(2/2 log₂ 2/2)  -(0/2 log₂ 0/2) = <b>0</b></td>
+  </tr>
+</table>
+
+Automaticamente o ramo **Normal** terá uma "Folha" classificando para **Yes**, pois todas as instancias (L1, L2, L8) levam a isso.
+
+
+<!-- IMAGEM -->
+
+**3° passo: Buscar qual é o atributo com maior ganho para o ramo Rain.**
+
+Recalcular entropia com base no **Rain**:
+
+<table>  
+  <tr>
+    <th>Entropia</th>
+  </tr>
+  <tr>
+    <td>S = [3+, 2-]</td>
+  </tr>
+  <tr>
+    <td>E = -(3/5 log₂ 3/5) -(2/5 log₂ 2/5)  = <b>0,971</b> </td>
+  </tr>
+</table>
+
+**PARA TEMPERATURE:**
+
+Decisão **Hot**:
+<table>
+  <tr>
+    <td>[0+, 0-]</td>
+    <td>-(0/0 log₂ 0/0) -(0/0 log₂ 0/0) = <b>0</b> </td>
+  </tr>
+</table>
+
+Decisão **Mild**:
+<table>
+  <tr>
+    <td>[2+, 1-]</td>
+    <td>-(2/3 log₂ 2/3)  -(1/3 log₂ 1/3) = <b>0,918</b></td>
+  </tr>
+</table>
+
+Decisão **Cool**:
+<table>
+  <tr>
+    <td>[1+, 1-]</td>
+    <td>-(1/2 log₂ 1/2)  -(1/2 log₂ 1/2) = <b>1</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **TEMPERATURE** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(Srain, TEMPERATURE)</b></td>
+    <td>0,971 -(0/5)* 0 -(3/5)* 0,918 -(2/5)* 1 = <b>0,020</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA HUMIDITY:**
+
+Decisão **High**:
+<table>
+  <tr>
+    <td>[1+, 1-]</td>
+    <td>-(1/2 log₂ 1/2) -(1/2 log₂ 1/2) = <b>1</b> </td>
+  </tr>
+</table>
+
+Decisão **Normal**:
+<table>
+  <tr>
+    <td>[2+, 1-]</td>
+    <td>-(2/3 log₂ 2/3)  -(1/3 log₂ 1/3) = <b>0,918</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **HUMIDITY** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(Srain, HUMIDITY)</b></td>
+    <td>0,971 -(2/5)* 1 -(3/5)* 0,918 = <b>0,020</b></td>
+  </tr>
+</table>
+<br>
+
+**PARA WINDY:**
+
+Decisão **Weak**:
+<table>
+  <tr>
+    <td>[3+, 0-]</td>
+    <td>-(3/3 log₂ 3/3) -(0/3 log₂ 0/3) = <b>0</b> </td>
+  </tr>
+</table>
+
+Decisão **Strong**:
+<table>
+  <tr>
+    <td>[0+, 2-]</td>
+    <td>-(0/2 log₂ 0/2)  -(2/2 log₂ 2/2) = <b>0</b></td>
+  </tr>
+</table>
+
+Ganho de informação para o atributo **WINDY** nesse conjunto de dados: 
+<table>
+  <tr>
+    <td><b>Gain(Srain, WINDY)</b></td>
+    <td>0,971 -(3/5)* 0 -(2/5)* 0 = <b>0.971</b></td>
+  </tr>
+</table>
+<br>
+
+
+<table>
+  <tr>
+    <td><b>Gain(Srain, TEMPERATURE)</b></td>
+    <td>0,971 -(0/5)* 0 -(3/5)* 0,918 -(2/5)* 1 = <b>0,020</b></td>
+  </tr>
+    <tr>
+    <td><b>Gain(Srain, HUMIDITY)</b></td>
+    <td>0,971 -(2/5)* 1 -(3/5)* 0,918 = <b>0,020</b></td>
+  </tr>
+  <tr>
+    <td><b>Gain(Srain, WINDY)</b></td>
+    <td>0,971 -(3/5)* 0 -(2/5)* 0 = <b>0.971</b></td>
+  </tr>
+</table>
+
+Dentre todos os atributos, o de maior ganho é o **WINDY**, logo tomará seguimento a partir do ramo **Rain**.
+
+**PARA WINDY:**
+
+Decisão **Weak**:
+<table>
+  <tr>
+    <td>[3+, 0-]</td>
+    <td>-(3/3 log₂ 3/3) -(0/3 log₂ 0/3) = <b>0</b> </td>
+  </tr>
+</table>
+
+Automaticamente o ramo **Weak** terá uma "Folha" classificando para **Yes**, pois todas as instancias (L4, L5, L10) levam a isso.
+
+
+Decisão **Strong**:
+<table>
+  <tr>
+    <td>[0+, 2-]</td>
+    <td>-(0/2 log₂ 0/2)  -(2/2 log₂ 2/2) = <b>0</b></td>
+  </tr>
+</table>
+
+Automaticamente o ramo **Strong** terá uma "Folha" classificando para **No**, pois todas as instancias (L6, L14) levam a isso.
+
+
+<!-- IMAGEM -->
+
+**4° passo: Buscar qual é o atributo com maior ganho para o ramo Overcast.**
+
+**Ramo Overcast:**
+
+Recalcular entropia com base no **Overcast**:
+
+<table>  
+  <tr>
+    <th>Entropia</th>
+  </tr>
+  <tr>
+    <td>S = [4+, 0-]</td>
+  </tr>
+  <tr>
+    <td>E = -(4/4 log₂ 4/4) -(0/4 log₂ 0/4)  = <b>0</b> </td>
+  </tr>
+</table>
+
+No caso do ramo **Overcast** ele automaticamente é classificado como **PLAY TENNIS = YES** pois todos os dados estão nessa condição, assim, chegando na "Folha" com resultado "Yes".(L3, L7, L12, 13)
