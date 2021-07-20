@@ -407,11 +407,9 @@ Ganho de informação para o atributo **WINDY** nesse conjunto de dados:
 Dentre todos os atributos, o de maior ganho é o **HUMIDITY**, logo tomará seguimento a partir do ramo **Sunny**.
 
 </br>
-
 <div align="center">
   <img align="center" src="./image/tree02.png" alt="Tree step 2" width="60%">
 </div>
-
 </br>
 
 Em **Sunny** agora terá o atributo **HUMIDITY** com as seguintes possibilidades:
@@ -436,8 +434,11 @@ Para **Normal**:
 
 Automaticamente o ramo **Normal** terá uma "Folha" classificando para **Yes**, pois todas as instancias (L1, L2, L8) levam a isso.
 
-
-<!-- IMAGEM -->
+</br>
+<div align="center">
+  <img align="center" src="./image/tree03.png" alt="Tree step 3" width="80%">
+</div>
+</br>
 
 **3° passo: Buscar qual é o atributo com maior ganho para o ramo Rain.**
 
@@ -562,6 +563,13 @@ Ganho de informação para o atributo **WINDY** nesse conjunto de dados:
 
 Dentre todos os atributos, o de maior ganho é o **WINDY**, logo tomará seguimento a partir do ramo **Rain**.
 
+
+<div align="center">
+  <img align="center" src="./image/tree04.png" alt="Tree step 4" width="80%">
+</div>
+</br>
+
+
 **PARA WINDY:**
 
 Decisão **Weak**:
@@ -586,7 +594,11 @@ Decisão **Strong**:
 Automaticamente o ramo **Strong** terá uma "Folha" classificando para **No**, pois todas as instancias (L6, L14) levam a isso.
 
 
-<!-- IMAGEM -->
+<div align="center">
+  <img align="center" src="./image/tree05.png" alt="Tree step 5" width="80%">
+</div>
+</br>
+
 
 **4° passo: Buscar qual é o atributo com maior ganho para o ramo Overcast.**
 
@@ -607,3 +619,9 @@ Recalcular entropia com base no **Overcast**:
 </table>
 
 No caso do ramo **Overcast** ele automaticamente é classificado como **PLAY TENNIS = YES** pois todos os dados estão nessa condição, assim, chegando na "Folha" com resultado "Yes".(L3, L7, L12, 13)
+
+
+</br>
+<div align="center">
+  <img align="center" src="./image/tree06.png" alt="Tree step 6" width="80%">
+</div>
