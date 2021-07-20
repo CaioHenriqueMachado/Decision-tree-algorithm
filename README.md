@@ -436,7 +436,7 @@ Automaticamente o ramo **Normal** terá uma "Folha" classificando para **Yes**, 
 
 </br>
 <div align="center">
-  <img align="center" src="./image/tree03.png" alt="Tree step 3" width="80%">
+  <img align="center" src="./image/tree03.png" alt="Tree step 3" width="60%">
 </div>
 </br>
 
