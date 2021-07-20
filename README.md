@@ -49,8 +49,11 @@
 A árvore é constituída por 4 características:
 
 **Raiz:** É o atributo inicial da árvore, no qual tem o maior ganho de informação.
+
 **Ramo:** São as possibilidade de decisão com base no atributo.
+
 **Nó:** É representado pelo próximo atributo com maior ganho de informação.
+
 **Folhas:** São as decisões finais, a classificação.
 
 
@@ -69,7 +72,7 @@ A entropia de um conjunto pode ser definida como sendo o grau de pureza desse co
 Dado um conjunto S, com instâncias pertencentes à classe i, com probabilidade pi, temos:
 
 <div align="center">
-  <img align="center" src="./image/entropyShannon.png" alt="Entropy Shannon">
+  <img align="center" src="./image/entropyShannon.png" alt="Entropy Shannon" width="50%">
 </div>
 
 
@@ -272,7 +275,9 @@ Dentre todos os atributos, o de maior ganho é o **OUTLOOK**
 O atributo **OUTLOOK** é a **RAIZ** da árvore, e seus ramos serão os possíveis valores para esse atributo **Sunny**, **Overcast** e **Rain**.
 > No próximos passos o atributo já não é tido em conta.
 
-<!-- COLOCAR UMA IMAGEM DA ÁRVORE -->
+<div align="center">
+  <img align="center" src="./image/tree01.png" alt="Tree step 1" width="60%">
+</div>
 
 <br>
 
@@ -400,6 +405,14 @@ Ganho de informação para o atributo **WINDY** nesse conjunto de dados:
 </table>
 
 Dentre todos os atributos, o de maior ganho é o **HUMIDITY**, logo tomará seguimento a partir do ramo **Sunny**.
+
+</br>
+
+<div align="center">
+  <img align="center" src="./image/tree02.png" alt="Tree step 2" width="60%">
+</div>
+
+</br>
 
 Em **Sunny** agora terá o atributo **HUMIDITY** com as seguintes possibilidades:
 
