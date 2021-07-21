@@ -11,7 +11,7 @@
  - [Conceitos básicos](#2)
  - [Fórmulas usadas](#3)
  - [Exemplo prático](#4)
- - [Algoritmos existentes]()
+ - [Algoritmos existentes](#5)
 
 <!-- 
  - [Estatística I](./01-Estatistica_1/#0_1)
@@ -625,3 +625,11 @@ No caso do ramo **Overcast** ele automaticamente é classificado como **PLAY TEN
 <div align="center">
   <img align="center" src="./image/tree06.png" alt="Tree step 6" width="80%">
 </div>
+
+
+
+<img src="./image/line.png" alt="line" width="100%">
+<br>
+<h1 align="center" id="5"> ALGORITMOS EXISTENTES</h1>
+<br>
+
